@@ -12,13 +12,13 @@ Try to check if the master is running by going to WEBUI (port 8080) on the runni
 	
 Get the url for the master (e.g. spark://192.168.1.50:7077) then start a worker with default port (7078 and 8081 for WebUI)  	
 
-	docker run --name spark-worker1 -d --net=host --restart=always wongnai/spark-standalone worker spark://${MASTER_HOST_OR_IP}:7077
+	docker run --name spark-worker1 -d --net=host --restart=always wongnai/spark-standalone worker spark://192.168.1.50:7077
 
 ###Worker2
 
 Start anohter worker with different ports by setting environment variables.
 
-	docker run --name spark-worker2 -d --net=host --restart=always -e SPARK_WORKER_PORT=7079 -e SPARK_WORKER_WEBUI_PORT=8082 wongnai/spark-standalone worker spark://${MASTER_HOST_OR_IP}:7077
+	docker run --name spark-worker2 -d --net=host --restart=always -e SPARK_WORKER_PORT=7079 -e SPARK_WORKER_WEBUI_PORT=8082 wongnai/spark-standalone worker spark://192.168.1.50:7077
 
 ###Running an SparkPi example
 
@@ -28,7 +28,7 @@ You should be able to see lot of logs with "Pi is roughly 3.142448".
 
 ###Submit an SparkPi example from any node
 
-	docker exec -it spark-worker /opt/spark/bin/spark-submit --master spark://${MASTER_HOST_OR_IP}:7077 /opt/spark/examples/src/main/python/pi.py 10
+	docker exec -it spark-worker /opt/spark/bin/spark-submit --master spark://192.168.1.50:7077 /opt/spark/examples/src/main/python/pi.py 10
 
 ##Environment Variables
 
