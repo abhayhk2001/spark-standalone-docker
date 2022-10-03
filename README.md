@@ -12,6 +12,21 @@ Reviewed few docker compose files which creates a spark standalone cluster with 
 2. If Docker Desktop is donloaded then docker-compose is installed by default.
 3. If Docker is installed in a linux system, install docker-compose separately.
 
+
+## Use
+
+1. Clone the Repo
+
+2. Move into any one of the directories which has to be tested. 
+```
+ $ cd <directory_name>
+```
+
+3. Follow the specific documentation for creating the clusters.
+4. Run bash on the master node and execute pyspark.
+
+
+
 ## Examples 
 ### 1. bitnami-docker-spark
 
