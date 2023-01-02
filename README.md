@@ -13,16 +13,10 @@ Reviewed few docker compose files which creates a spark standalone cluster with 
 
 
 ## Use
-
-1. Clone the Repo
-	```
-	git clone https://github.com/cluster-apps-on-docker/spark-standalone-cluster-on-docker
-	```
-
-2. Move into the directory. 
-	```
-	$ cd spark-standalone-cluster-on-docker
-	```
+Move into the directory. 
+```
+cd spark-standalone-cluster-on-docker
+```
 
 ### spark-standalone-cluster-on-docker
 
@@ -55,8 +49,5 @@ Edit YMl file with required configuration. Then run the build.sh file to get doc
 chmod +x build.sh
 ./build.sh
 ```
-
-
-
 
 Futher Documentation: [docs](spark-standalone-cluster-on-docker/README.md)
