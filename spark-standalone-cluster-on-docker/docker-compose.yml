@@ -43,9 +43,20 @@ services:
       - SPARK_WORKER_CORES=1
       - SPARK_WORKER_MEMORY=512m
     ports:
-      - 8082:8081
+      - 8082:8082
     volumes:
       - shared-workspace:/opt/workspace
     depends_on:
       - spark-master
-...
+  spark-worker-3:
+    image: andreper/spark-worker:3.0.0
+    container_name: spark-worker-3
+    environment:
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=512m
+    ports:
+      - 8083:8083
+    volumes:
+      - shared-workspace:/opt/workspace
+    depends_on:
+      - spark-master
